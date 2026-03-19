@@ -297,6 +297,7 @@ fixtures = [
             ]]
         ]
     },
+    # Workflow
     {
         "doctype": "Workflow",
         "filters": [
@@ -307,6 +308,9 @@ fixtures = [
             ]
         ]
      },
+     # Workflow State
+      {
+        "doctype": "Workflow State"
+    }
 ]
 
-#workflow

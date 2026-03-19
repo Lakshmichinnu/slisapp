@@ -17,6 +17,7 @@
   "is_active",
   "attachment",
   "remark",
+  "fetch_services",
   "section_break_vbdb",
   "services_and_rates"
  ],
@@ -81,6 +82,7 @@
    "fieldtype": "Section Break"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "services_and_rates",
    "fieldtype": "Table",
    "label": "Services & Rates",
@@ -90,13 +92,18 @@
    "fieldname": "remark",
    "fieldtype": "Small Text",
    "label": "Remark"
+  },
+  {
+   "fieldname": "fetch_services",
+   "fieldtype": "Button",
+   "label": "Fetch Services"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-03-19 15:47:14.010248",
+ "modified": "2026-03-19 16:38:25.117311",
  "modified_by": "Administrator",
  "module": "Slis App",
  "name": "Government Order",

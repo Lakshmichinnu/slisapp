@@ -65,7 +65,7 @@ def build_report(filters):
             and r.name_of_type
         ):
             use_total = frappe.db.get_value(
-                "Schemes",
+                "Name Of Type",
                 r.name_of_type,
                 "count_the_total_parameter"
             ) or 0

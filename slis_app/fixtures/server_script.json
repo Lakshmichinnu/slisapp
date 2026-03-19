@@ -161,13 +161,13 @@
   "doctype_event": "Before Insert",
   "enable_rate_limit": 0,
   "event_frequency": "All",
-  "modified": "2026-03-19 14:14:22.219278",
+  "modified": "2026-03-19 16:51:46.317766",
   "module": "Slis App",
   "name": "Autofetch rates from GO",
   "rate_limit_count": 5,
   "rate_limit_seconds": 86400,
   "reference_doctype": null,
-  "script": "# Get current GO name\ngo = frappe.form_dict.get(\"go\")\n\nresult = []\n\nif go:\n\n    # Get all matching rate rows\n    rate_rows = frappe.get_all(\n        \"Service Rate History\",\n        filters={\n            \"government_order\": go\n        },\n        fields=[\n            \"parent\",\n            \"rate\",\n            \"effective_from\"\n        ],\n        order_by=\"parent asc, effective_from desc\"\n    )\n\n    seen_services = set()\n\n    for row in rate_rows:\n\n        # Avoid duplicate services (pick latest rate)\n        if row.parent in seen_services:\n            continue\n\n        seen_services.add(row.parent)\n\n        # Fetch service details\n        service_doc = frappe.get_doc(\"Soil Service Item\", row.parent)\n\n        result.append({\n            \"service\": row.parent,\n            \"service_name\": service_doc.service_name,\n            \"category\": service_doc.service_category,\n            \"rate\": row.rate,\n            \"effective_from\": row.effective_from\n        })\n\n# Return data\nfrappe.response[\"message\"] = result",
+  "script": "# Get the GO name passed from the Client Script\ngo_name = frappe.form_dict.get(\"go\")\nresult = []\n\nif go_name:\n    # 1. Get all rate history rows linked to this GO\n    rate_rows = frappe.get_all(\n        \"Service Rate History\",\n        filters={\"government_order\": go_name},\n        fields=[\"parent\", \"rate\", \"effective_from\"],\n        order_by=\"effective_from desc\"\n    )\n\n    seen_services = set()\n\n    for row in rate_rows:\n        # 2. Only take the latest rate for each unique service\n        if row.parent in seen_services:\n            continue\n        \n        seen_services.add(row.parent)\n\n        # 3. Fetch the Service Item details (Category and Name)\n        # Using get_value is faster than get_doc for simple fields\n        service_info = frappe.db.get_value(\n            \"Soil Service Item\", \n            row.parent, \n            [\"service_name\", \"service_category\"], \n            as_dict=True\n        )\n\n        if service_info:\n            result.append({\n                \"service\": row.parent,\n                \"service_name\": service_info.service_name,\n                \"category\": service_info.service_category,\n                \"rate\": row.rate,\n                \"effective_from\": row.effective_from\n            })\n\n# Return the list to the Client Script\nfrappe.response[\"message\"] = result",
   "script_type": "API"
  }
 ]
