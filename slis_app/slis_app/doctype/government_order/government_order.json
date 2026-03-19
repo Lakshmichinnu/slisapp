@@ -1,0 +1,126 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:go_number",
+ "creation": "2026-02-13 10:28:04.719103",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_qotr",
+  "go_number",
+  "go_date",
+  "effective_from",
+  "amended_from",
+  "column_break_zngj",
+  "department",
+  "description",
+  "is_active",
+  "attachment",
+  "remark",
+  "section_break_vbdb",
+  "services_and_rates"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_qotr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Government Order",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "go_number",
+   "fieldtype": "Data",
+   "label": "GO Number",
+   "unique": 1
+  },
+  {
+   "fieldname": "go_date",
+   "fieldtype": "Date",
+   "label": "GO Date"
+  },
+  {
+   "fieldname": "effective_from",
+   "fieldtype": "Date",
+   "label": "Effective From"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
+  },
+  {
+   "fieldname": "attachment",
+   "fieldtype": "Attach",
+   "label": "Attachment"
+  },
+  {
+   "fieldname": "column_break_zngj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_vbdb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "services_and_rates",
+   "fieldtype": "Table",
+   "label": "Services & Rates",
+   "options": "GO Service Details"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Small Text",
+   "label": "Remark"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-03-19 15:47:14.010248",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Government Order",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

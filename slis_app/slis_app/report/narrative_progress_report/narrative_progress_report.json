@@ -1,0 +1,43 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2026-03-03 11:17:29.600590",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": null,
+ "modified": "2026-03-12 12:01:16.794430",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Narrative Progress Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Soil Sample Collection",
+ "report_name": "Narrative Progress Report",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "Managing Director"
+  },
+  {
+   "role": "Assistant Director"
+  },
+  {
+   "role": "Research Assistant"
+  },
+  {
+   "role": "PSC Officer"
+  },
+  {
+   "role": "Senior Chemist"
+  },
+  {
+   "role": "Administrator"
+  }
+ ],
+ "timeout": 0
+}

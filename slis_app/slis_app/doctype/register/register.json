@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "creation": "2026-02-08 23:42:09.433242",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "source_sample_id",
+  "latitude",
+  "longitude",
+  "tests",
+  "client_type",
+  "crops_list",
+  "plot_size"
+ ],
+ "fields": [
+  {
+   "fieldname": "source_sample_id",
+   "fieldtype": "Link",
+   "label": "Source Sample Form",
+   "options": "Soil Sample Collection"
+  },
+  {
+   "fieldname": "latitude",
+   "fieldtype": "Float",
+   "label": "Latitude"
+  },
+  {
+   "fieldname": "longitude",
+   "fieldtype": "Float",
+   "label": "Longitude"
+  },
+  {
+   "fieldname": "tests",
+   "fieldtype": "Table",
+   "label": "Tests ",
+   "options": "Test Details"
+  },
+  {
+   "fieldname": "client_type",
+   "fieldtype": "Data",
+   "label": "Client Type"
+  },
+  {
+   "fieldname": "crops_list",
+   "fieldtype": "Table",
+   "label": "Crops List",
+   "options": "Crops"
+  },
+  {
+   "fieldname": "plot_size",
+   "fieldtype": "Data",
+   "label": "Plot SIze"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-10 16:07:18.730471",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Register",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
